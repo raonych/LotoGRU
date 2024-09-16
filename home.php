@@ -25,7 +25,7 @@ else if (isset($_GET['nome'])) {
 
     <section class="hero">
         <div class="hero-content">
-            <h1 >Escolha seus números da sorte <?php echo $nome?>!!</h1>
+            <h1 >Escolha seus números da sorte <?php if(isset($nome)){echo $nome;}?>!!</h1>
         </div>
     </section>
 
@@ -38,7 +38,7 @@ else if (isset($_GET['nome'])) {
             <div class="actions">
                 <label for="bet" class="label-bet">Insira o valor da aposta:</label>
                 <input type="text" name="bet" class="bet-input">
-                <input type="hidden" name="nome" value="<?php echo $nome ?>">
+                <input type="hidden" name="nome" value="<?php if(isset($nome)){echo $nome;} ?>">
                 <button type="submit" class="submit-btn">Enviar</button>            
             </div>
 </form>

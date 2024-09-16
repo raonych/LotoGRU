@@ -65,13 +65,13 @@ for($i = 0; $i < count($num_sort); $i++){
 if (isset($vencedor)){
 switch(count($vencedor)){
     case  count($vencedor) < 25: 
-        echo "você não acertou a quantidade de números necessário para ganhar o premio </br>";
+        echo "você não acertou a quantidade de números necessários para ganhar o prêmio. </br>";
         header("Refresh: 10; url=home.php?nome=" . urlencode($nome));
         echo "redirecionado <div class=\" spinner\"></div>";
 
         break;
     case 25: 
-        echo "Parabéns";
+        echo "Parabéns!! ";
         echo "Você ganhou R$", (int)$aposta * 50;
         break;
 }
@@ -82,7 +82,7 @@ else{
     echo "Você ganhou R$", (int)$aposta * 50;
     }
     else{
-        echo "você não acertou a quantidade de números necessário para ganhar o premio </br>";
+        echo "você não acertou a quantidade de números necessários para ganhar o prêmio. </br>";
         header("Refresh: 10; url=home.php?nome=" . urlencode($nome));
         echo "redirecionado<div class=\"spinner\"></div>";
     }
@@ -111,6 +111,10 @@ else{
         }?>
     </div>
 </div>    
+<form action="home.php" method="post" class="actions">
+    <input type="hidden" name="nome" value="<?php if(isset($nome))echo $nome;?>">
+        <button type="submit" class="submit-btn">Jogar novamente</button>            
+    </form>
 </body>
 </html>
 
