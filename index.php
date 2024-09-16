@@ -14,25 +14,18 @@
     <header>
         <div class="logo">LotoGRU</div>
     </header>
-
     <section class="hero">
-        <div class="hero-content">
-            <h1 >Escolha seus números da sorte!!</h1>
-        </div>
+    <form action="home.php" method="post" class="number-selection">
+            <div class="actions">
+                <label for="nome" class="label-bet">Insira o seu nome:</label>
+                <input type="text" name="nome" class="bet-input">
+                <button type="submit" class="submit-btn">Enviar</button>            
+            </div>
+    </form> 
     </section>
 
     <main>
-        <form action="recebe-dado.php" method="post" class="number-selection">
-            <h2 class="hero-content">Escolha 25 números</h2>
-            <div class="number-grid">
-                <?php include "./modulos/indexnums.php" ?>
-            </div>
-            <div class="actions">
-                <label for="bet" class="label-bet">Insira o valor da aposta:</label>
-                <input type="text" name="bet" class="bet-input">
-                <button type="submit" class="submit-btn">Enviar</button>            
-            </div>
-</form>
+        
     </main>
 </body>
 </html>

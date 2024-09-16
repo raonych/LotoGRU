@@ -1,4 +1,5 @@
-<?php 
+<?php
+$nome = $_POST['nome']; 
 $num_select = [];
 $num_sort = [];
 $num_win = [];
@@ -53,7 +54,7 @@ for($i = 0; $i < count($num_sort); $i++){
         <div class="logo">LotoGRU</div>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="home.php">Home</a></li>
 
             </ul>
         </nav>
@@ -65,27 +66,25 @@ if (isset($vencedor)){
 switch(count($vencedor)){
     case  count($vencedor) < 25: 
         echo "você não acertou a quantidade de números necessário para ganhar o premio </br>";
-        header("Refresh: 10; url=index.php");
+        header("Refresh: 10; url=home.php?nome=" . urlencode($nome));
         echo "redirecionado <div class=\" spinner\"></div>";
 
         break;
     case 25: 
         echo "Parabéns";
-        echo "Você ganhou R$", $aposta * 50;
+        echo "Você ganhou R$", (int)$aposta * 50;
         break;
 }
 }
 else{
     if(count($num_sort)== 25){
-    echo "Parabéns, em 25 chances de 50% de acertar você conseguiu
-         errar em todas! Vai ser recompensado por ser azarado pra caramba";
-    echo "Você ganhou R$", $aposta * 50;
+    echo "Parabéns, você conseguiu errar todos os 25 números! Vai ser recompensado por ser azarado pra caramba";
+    echo "Você ganhou R$", (int)$aposta * 50;
     }
     else{
         echo "você não acertou a quantidade de números necessário para ganhar o premio </br>";
-        header("Refresh: 10; url=index.php");
+        header("Refresh: 10; url=home.php?nome=" . urlencode($nome));
         echo "redirecionado<div class=\"spinner\"></div>";
-        
     }
 
 }
